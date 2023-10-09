@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string text = "this is a text";
+    string pattern = "text";
+    int count = 0;
+    int i = 0;
+    int j = 0;
+    while(i<=text.size()){
+        if(count == pattern.size()){
+            break;
+        }
+        else if(text[i]==pattern[j]){
+            i++;
+            j++;
+            count++;
+        }
+        else{
+            i++;
+            j=0;
+            count=0;
+        }
+    }
+    if(count == pattern.size()){
+        cout << "Pattern Found";
+        cout << "\n";
+        cout << "Pattern found at : from " << i-pattern.size() << " to " << i;
+    }
+    else{
+        cout << "Pattern not found";
+    }
+    return 0;
+}
